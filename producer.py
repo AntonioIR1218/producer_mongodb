@@ -59,7 +59,16 @@ def fetch_and_send_data():
     response = requests.get(JSON_URL)
     response.raise_for_status()
     
-    tracks = response.json()  # Ahora es un JSON, no JSONL
+    # Obtenemos la lista de strings JSON
+    tracks_raw = response.json()
+    
+    # Convertimos cada string en un diccionario
+    try:
+        tracks = [json.loads(t) for t in tracks_raw]
+    except json.JSONDecodeError as e:
+        logging.error(f"Error decodificando JSON: {e}")
+        return 0, len(tracks_raw), len(tracks_raw)
+
     logging.info(f"Tracks recibidos: {len(tracks)}")
 
     success, failed = 0, 0
