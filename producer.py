@@ -19,7 +19,7 @@ JSON_URL = "https://raw.githubusercontent.com/AntonioIR1218/spark-labs/refs/head
 
 # Credenciales actualizadas
 producer_conf = {
-    'bootstrap.servers': 'd035kvrb92dfgde406p0.any.us-east-1.mpx.prd.cloud.redpanda.com:9092',
+    'bootstrap.servers': 'd03h267mtrpq60sg5cf0.any.us-west-2.mpx.prd.cloud.redpanda.com:9092',
     'security.protocol': 'SASL_SSL',
     'sasl.mechanism': 'SCRAM-SHA-256',
     'sasl.username': 'tony',
